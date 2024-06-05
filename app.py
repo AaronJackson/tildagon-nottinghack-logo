@@ -1,7 +1,10 @@
 from app import App
 from app_components import clear_background
+from tildagonos import tildagonos
+from . import logo as logo
 
-class HelloWorld(App):
+class NottingHackApp(App):
+
   def __init__(self):
     pass
 
@@ -10,8 +13,7 @@ class HelloWorld(App):
 
   def draw(self, ctx):
     clear_background(ctx)
-    ctx.text_align = ctx.CENTER
-    ctx.text_baseline = ctx.MIDDLE
+    tildagonos.tft.bitmap(logo, 0, 0)
     ctx.move_to(0, 0).gray(1).text("Hello, world!")
 
-__app_export__ = HelloWorld
+__app_export__ = NottingHackApp
